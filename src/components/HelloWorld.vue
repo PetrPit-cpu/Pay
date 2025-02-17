@@ -10,7 +10,6 @@
               alt="Логотип"
             />
             <div class="header__menu">
-
               <!-- Основное меню, скрывается при `max-width: 998px` -->
               <nav :class="['header__nav', { 'is-active': isMenuOpen }]">
                 <ul class="header__list-items list-reset flex">
@@ -44,7 +43,7 @@
                   {{ $t("header.close") }}
                 </button>
               </nav>
-                <div class="header__top flex">
+              <div class="header__top flex">
                 <!-- Блок переключения языка -->
                 <div class="header__rus flex">
                   <button
@@ -61,7 +60,11 @@
                   </button>
 
                   <!-- БУРГЕР-МЕНЮ (рядом с `header__rus`) -->
-                  <button class="header__burger" @click="toggleMenu" :class="{ 'is-active': isMenuOpen }">
+                  <button
+                    class="header__burger"
+                    @click="toggleMenu"
+                    :class="{ 'is-active': isMenuOpen }"
+                  >
                     <span class="header__burger-line"></span>
                     <span class="header__burger-line"></span>
                     <span class="header__burger-line"></span>
@@ -69,7 +72,6 @@
                 </div>
               </div>
             </div>
-
           </div>
           <div class="header__block-name flex">
             <h1 class="header__title">{{ $t("header.title") }}</h1>
@@ -77,10 +79,10 @@
           </div>
           <router-link class="header__link-click" to="/second">
             <img
-            class="header__link-svg"
-            src="@/assets/header-svg-icon-link.svg"
-            alt="Ссылка"
-          />
+              class="header__link-svg"
+              src="@/assets/header-svg-icon-link.svg"
+              alt="Ссылка"
+            />
           </router-link>
         </div>
       </section>
@@ -452,16 +454,18 @@ export default {
   data() {
     return {
       isMenuOpen: false,
-      isRussian: true
+      isRussian: true,
     };
   },
   computed: {
     currentFlag() {
-      return this.isRussian ? require('@/assets/rus-logo.svg') : require('@/assets/eng-logo.svg');
+      return this.isRussian
+        ? require("@/assets/rus-logo.svg")
+        : require("@/assets/eng-logo.svg");
     },
     currentLang() {
       return this.isRussian ? "РУ" : "ENG";
-    }
+    },
   },
   methods: {
     toggleMenu() {
@@ -470,8 +474,8 @@ export default {
     toggleLanguage() {
       this.isRussian = !this.isRussian;
       this.$i18n.locale = this.isRussian ? "ru" : "en";
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -510,7 +514,7 @@ export default {
 .header__burger-line {
   width: 30px;
   height: 4px;
-  background-color: #F5B034;
+  background-color: #f5b034;
   border-radius: 5px;
   transition: 0.3s;
 }
@@ -1012,7 +1016,7 @@ export default {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 36px;
-  transform: translate(150px, 0px);
+  transform: translate(50px, 0px);
 }
 
 .functional__item-2 {
@@ -1021,6 +1025,7 @@ export default {
   justify-content: center;
   flex-direction: column;
   /*transform: translate(-70px, 0px);*/
+  margin-left: -80px;
 }
 
 .functional__item-3 {
@@ -1047,8 +1052,10 @@ export default {
 /*cost*/
 
 .cost {
-  padding: 159px 0 87px;
-  margin: 0 243px;
+  margin: 0;
+  padding: 159px 243px 87px;
+  background-image: url(../assets/BG-Lines.svg);
+  background-position: top 100% right;
 }
 
 .cost__container {
@@ -1293,6 +1300,10 @@ export default {
   .header__list-items {
     gap: 40px;
   }
+
+  .footer__item-4::before {
+    left: 360px;
+  }
 }
 
 /*1440*/
@@ -1368,7 +1379,7 @@ export default {
   }
 
   .cost {
-    margin: 0 123px;
+    padding: 159px 123px 87px;
   }
 
   .cost__list-items {
@@ -1505,8 +1516,7 @@ export default {
   }
 
   .cost {
-    padding: 129px 0 57px;
-    margin: 0 63px;
+    padding: 129px 63px 57px;
   }
 
   .cost__btn {
@@ -1622,7 +1632,8 @@ export default {
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out,
+      transform 0.3s ease-in-out;
     width: 100%;
     font-size: 18px;
     line-height: 50px;
@@ -1646,12 +1657,13 @@ export default {
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out,
+      transform 0.3s ease-in-out;
     max-width: 205px;
     width: 100%;
     margin-top: 20px;
     padding: 0px 10px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     color: #000000;
     border: none;
     font-weight: 700;
@@ -1726,7 +1738,7 @@ export default {
   }
 
   .cost {
-    padding: 40px 0 40px 0;
+    padding: 40px 63px 40px 63px;
   }
 
   .cost__list-items {
@@ -1800,8 +1812,12 @@ export default {
     margin: 0 33px;
   }
 
+  .functional__item-2 {
+    margin-left: 0;
+  }
+
   .cost {
-    margin: 0 33px;
+    padding: 40px 33px 40px 33px;
   }
 
   .footer__list-items-1 {
@@ -1819,7 +1835,6 @@ export default {
 
 /*320*/
 @media (max-width: 568px) {
-
   .header {
     margin: 10px 0 10px 0;
     padding: 0 10px;
@@ -1965,7 +1980,7 @@ export default {
   }
 
   .cost {
-    margin: 0 10px;
+    padding: 40px 10px 40px 10px;
   }
 
   .cost__btn {

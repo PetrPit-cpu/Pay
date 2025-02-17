@@ -3,64 +3,73 @@
     <main class="page_container">
       <section class="header">
         <div class="header__container">
-            <router-link to="/" class="header__back-link">Назад</router-link>
           <div class="header__block-list flex">
             <a class="header__link" href="#">
-                <img
-              class="header__logo"
-              src="@/assets/Pay-taxi-logo.svg"
-              alt="Логотип"
-            />
+              <img
+                class="header__logo"
+                src="@/assets/Pay-taxi-logo.svg"
+                alt="Логотип"
+              />
             </a>
-            <button class="header__btn btn">Подключиться</button>
+            <button class="header__btn btn" @click="openModal">
+              {{ $t("secondPage.contactOne") }}
+            </button>
+            <!-- Переключение языка -->
+            <button @click="toggleLanguage" class="header__lang-button flex">
+              <img
+                class="header__lang-icon"
+                :src="currentFlag"
+                :alt="currentLang"
+              />
+              <span class="header__lang-text">{{ currentLang }}</span>
+              <img class="header__icon-ru" src="@/assets/icon-ru.svg" />
+            </button>
           </div>
           <div class="header__block-name flex">
+            <router-link to="/" class="header__back-link">
+              {{ $t("secondPage.backToHome") }}
+            </router-link>
             <h1 class="header__title title">
-              Сделайте ваш бизнес такси безопасным. И&nbsp;пусть ФНС будет
-              уверена, что вы&nbsp;добросовестный налогоплательщик.
+              {{ $t("secondPage.title") }}
             </h1>
-            <span class="header__founder-name">Рустам Юськаев</span>
-            <p class="header__founder-name-text">основатель сервиса</p>
+            <span class="header__founder-name">{{
+              $t("secondPage.founder")
+            }}</span>
+            <p class="header__founder-name-text">
+              {{ $t("secondPage.founderDescription") }}
+            </p>
           </div>
         </div>
       </section>
       <section class="panacea">
         <div class="panacea__container container">
-          <h1 class="panacea__title title">
-            Почему наличие хорошего бухгалтера не&nbsp;панацея при проверках ФНС
-          </h1>
-          <p class="panacea__text text-1">
-            Помимо декларации УСН или КУДиР есть процессы, которые необходимо
-            осуществлять в&nbsp;течении всего времени:
-          </p>
+          <h1 class="panacea__title title">{{ $t("panacea.title") }}</h1>
+          <p class="panacea__text text-1">{{ $t("panacea.text") }}</p>
+          <ul class="panacea__list-items list-reset flex">
+            <div class="panacea__block-1 flex">
+              <li class="panacea__item-1">
+                <p class="panacea__text-element-1 element-one-card text-2">
+                  {{ $t("panacea.item1") }}
+                </p>
+              </li>
+              <li class="panacea__item-2">
+                <p class="panacea__text-element-2 element-two-card text-2">
+                  {{ $t("panacea.item2") }}
+                </p>
+              </li>
+            </div>
+            <li class="panacea__item-3">
+              <p class="panacea__text-element-3 element-three-card text-2">
+                {{ $t("panacea.item3") }}
+              </p>
+            </li>
+          </ul>
         </div>
-        <ul class="panacea__list-items list-reset flex">
-          <div class="panacea__block-1 flex">
-            <li class="panacea__item-1">
-              <p class="panacea__text-element-1 element-one-card text-2">
-                Иметь акцепт правильного договора-оферты с&nbsp;каждым
-                водителем;
-              </p>
-            </li>
-            <li class="panacea__item-2">
-              <p class="panacea__text-element-2 element-two-card text-2">
-                Регулярно формировать отчеты агентов и&nbsp;направлять всем
-                водителям (например, в&nbsp;мобильное приложение);
-              </p>
-            </li>
-          </div>
-          <li class="panacea__item-3">
-            <p class="panacea__text-element-3 element-three-card text-2">
-              Фискализировать ваш доход и&nbsp;направлять кассовые чеки
-              водителям (можно также в&nbsp;мобильное приложение).
-            </p>
-          </li>
-        </ul>
       </section>
       <section class="retribution">
         <div class="retribution__container container">
           <h1 class="retribution__title title-2">
-            Что будет, если этого не&nbsp;делать?
+            {{ $t("retribution.title") }}
           </h1>
           <ul class="retribution__list-items list-reset flex">
             <li class="retribution__item-1 flex">
@@ -75,25 +84,12 @@
             <div class="retribution__block-thesis flex">
               <li class="retribution__item-2 retribution-element-1">
                 <p class="retribution__text-1 text-1">
-                  Отсутствие контрольно-кассовой техники и&nbsp;фискализации
-                  дохода парка грозит внушительными штрафами, а&nbsp;также
-                  дисквалификацию должностных лиц на&nbsp;срок от&nbsp;одного
-                  года до&nbsp;двух лет и&nbsp;административное приостановление
-                  деятельности юридического лица на&nbsp;срок
-                  <span class="retribution__bold"
-                    >до&nbsp;90&nbsp;суток (ст.&nbsp;14.5 КоАП&nbsp;РФ).</span
-                  >
+                  {{ $t("retribution.item1") }}
                 </p>
               </li>
               <li class="retribution__item-3 retribution-element-2">
                 <p class="retribution__text-2 text-1">
-                  Непредоставление отчетов агента говорит о&nbsp;том, что Агент
-                  не&nbsp;выполнил свои агентские обязательства. Что позволит
-                  инспектору усомнится в&nbsp;агентских отношениях. Вследствие
-                  чего возможна переквалификация в&nbsp;трудовые отношения
-                  и&nbsp;<span class="retribution__bold"
-                    >доначисление 13% НДФЛ за&nbsp;весь оборот парка.</span
-                  >
+                  {{ $t("retribution.item2") }}
                 </p>
               </li>
             </div>
@@ -106,21 +102,17 @@
             <ul class="processes__list-items list-reset flex">
               <li class="processes__item">
                 <h1 class="processes__title title-2">
-                  Почему лучше доверить процессы нам?
+                  {{ $t("processes.title") }}
                 </h1>
               </li>
               <li class="processes__item">
                 <p class="processes__text text-3">
-                  Мы&nbsp;работаем на&nbsp;рынке с&nbsp;2016-го года
-                  и&nbsp;обладаем большой экспертизой, как правильно платить
-                  исполнителям.
+                  {{ $t("processes.item1") }}
                 </p>
               </li>
               <li class="processes__item">
                 <p class="processes__text text-3">
-                  Более 1500 камеральных проверок мы&nbsp;прошли с&nbsp;нашими
-                  клиентами, и&nbsp;не&nbsp;было ни&nbsp;одного доначисления
-                  налогов.
+                  {{ $t("processes.item2") }}
                 </p>
               </li>
             </ul>
@@ -129,54 +121,47 @@
       </section>
       <section class="services">
         <div class="services__container container">
-          <h1 class="services__title title-2">
-            Как происходит процесс подключения к&nbsp;сервису?
-          </h1>
-          <p class="services__text-thesis text-1">
-            Процесс интеграции полностью дистанционный, и&nbsp;даже регистрация
-            кассы происходит онлайн:
-          </p>
+          <h1 class="services__title title-2">{{ $t("services.title") }}</h1>
+          <p class="services__text-thesis text-1">{{ $t("services.text") }}</p>
           <ul class="services__list-items list-reset flex">
             <li class="services__item-1">
               <span class="services__circle-1">
-                <span class="services__number-1"> 1 </span>
+                <span class="services__number-1">1</span>
               </span>
               <p class="services__text-1 text-2 services-element">
-                Вы&nbsp;оставляете заявку на&nbsp;нашем сайте
+                {{ $t("services.item1") }}
               </p>
             </li>
             <li class="services__item-2">
               <span class="services__circle-2">
-                <span class="services__number-2"> 2 </span>
+                <span class="services__number-2">2</span>
               </span>
               <p class="services__text-2 text-2 services-element">
-                Мы&nbsp;связываемся с&nbsp;вами и&nbsp;уточняем потребности
+                {{ $t("services.item2") }}
               </p>
             </li>
             <li class="services__item-1">
               <span class="services__circle-1">
-                <span class="services__number-1"> 3 </span>
+                <span class="services__number-1">3</span>
               </span>
               <p class="services__text-1 text-2 services-element">
-                Разворачиваем облачный сервис
+                {{ $t("services.item3") }}
               </p>
             </li>
             <li class="services__item-2">
               <span class="services__circle-2">
-                <span class="services__number-2"> 4 </span>
+                <span class="services__number-2">4</span>
               </span>
               <p class="services__text-2 text-2 services-element">
-                Производим интеграцию с&nbsp;Яндекс.Про и&nbsp;подключаем
-                виртуальную кассу
+                {{ $t("services.item4") }}
               </p>
             </li>
             <li class="services__item">
               <span class="services__circle">
-                <span class="services__number"> 5 </span>
+                <span class="services__number">5</span>
               </span>
               <p class="services__text text-2 services-element">
-                Организуем онлайн встречу с&nbsp;вашими сотрудниками для
-                обучения.
+                {{ $t("services.item5") }}
               </p>
             </li>
           </ul>
@@ -184,27 +169,28 @@
       </section>
       <section class="functional">
         <div class="functional__container container">
-          <h1 class="functional__title title-2">Кому необходим функционал</h1>
+          <h1 class="functional__title title-2">
+            {{ $t("functional.title") }}
+          </h1>
           <ul class="functional__list-items list-reset flex">
             <div class="functional__block-result flex">
               <li class="functional__item">
                 <div class="functional__block">
-                  <span class="functional__bold-text"> Всем паркам: </span>
+                  <span class="functional__bold-text">
+                    {{ $t("functional.bold1") }}
+                  </span>
                   <p class="functional__normal-text">
-                    железным и&nbsp;виртуальным;
+                    {{ $t("functional.text1") }}
                   </p>
                 </div>
               </li>
               <li class="functional__item">
                 <div class="functional__block-services">
                   <span class="functional__bold-text-services">
-                    Вне зависимости от&nbsp;того, каким сервисом выплат
-                    пользуетесь&nbsp;&mdash; мы&nbsp;умеем работать
-                    со&nbsp;всеми крупными сервисами. </span
-                  ><span class="functional__normal-text">
-                    Интеграция будет только с&nbsp;Яндекс.Про, дополнительные
-                    интеграции с&nbsp;вашими сервисами выплат
-                    не&nbsp;потребуются.
+                    {{ $t("functional.bold2") }}
+                  </span>
+                  <span class="functional__normal-text">
+                    {{ $t("functional.text2") }}
                   </span>
                 </div>
               </li>
@@ -216,8 +202,7 @@
                 alt="Ракета"
               />
               <p class="functional__text-conclusion text-1">
-                Таким образом вам не&nbsp;обязательно менять сервис выплат,
-                чтобы работать максимально безопасно для вашего бизнеса.
+                {{ $t("functional.conclusion") }}
               </p>
             </li>
           </ul>
@@ -227,17 +212,16 @@
         <div class="cost__container container">
           <div class="cost__block">
             <h1 class="cost__title title-2">
-              Сколько стоит услуга и&nbsp;как подключить?
+              {{ $t("cost.title") }}
             </h1>
             <p class="cost__text">
-              Стоимость полного списка услуг нашего сервиса составляет
-              25&nbsp;тыс. рублей в&nbsp;месяц, но&nbsp;мы&nbsp;готовы
-              предоставить скидку&nbsp;50% всем партнерам
+              {{ $t("cost.text1") }}
               <img
                 class="cost__img"
                 src="@/assets/Clip-cost.svg"
                 alt="Яндекс Про"
-              />, если требуется только услуги, описанные выше.
+              />
+              {{ $t("cost.text2") }}
             </p>
           </div>
         </div>
@@ -245,40 +229,40 @@
       <section class="advantages">
         <div class="advantages__container container">
           <h1 class="advantages__title title-2">
-            Важные преимущества сервиса:
+            {{ $t("advantages.title") }}
           </h1>
           <ul class="advantages__list-items list-reset flex">
             <li class="advantages__item">
               <span class="advantages__circle">
-                <span class="advantages__number"> 1 </span>
+                <span class="advantages__number">1</span>
               </span>
               <p class="advantages__text text-2 advantages-element">
-                <span class="advantages__text-bold">Инновационные роботы,</span>
-                позволяющие полноценно заменить Call-центр.
+                <span class="advantages__text-bold">{{
+                  $t("advantages.item1Bold")
+                }}</span>
+                {{ $t("advantages.item1") }}
               </p>
             </li>
             <li class="advantages__item">
               <span class="advantages__circle-2">
-                <span class="advantages__number-2"> 2 </span>
+                <span class="advantages__number-2">2</span>
               </span>
               <p class="advantages__text-2 text-2 advantages-element">
-                <span class="advantages__text-bold"
-                  >Сверка платежей с&nbsp;Яндекс Про.</span
-                >
-                Показываем какие поездки были оплачены, а&nbsp;какие нет.
+                <span class="advantages__text-bold">{{
+                  $t("advantages.item2Bold")
+                }}</span>
+                {{ $t("advantages.item2") }}
               </p>
             </li>
             <li class="advantages__item">
               <span class="advantages__circle-3">
-                <span class="advantages__number-3"> 3 </span>
+                <span class="advantages__number-3">3</span>
               </span>
               <p class="advantages__text-3 text-2 advantages-element">
-                <span class="advantages__text-bold"
-                  >Отчеты агента глубиной 3&nbsp;года.</span
-                >
-                Контролирующие органы затребовали отчеты глубиной
-                в&nbsp;3&nbsp;года? Мы&nbsp;поможем сформировать необходимые
-                документы.
+                <span class="advantages__text-bold">{{
+                  $t("advantages.item3Bold")
+                }}</span>
+                {{ $t("advantages.item3") }}
               </p>
             </li>
           </ul>
@@ -294,7 +278,7 @@
                     type="text"
                     id="company"
                     class="form__input"
-                    placeholder="Компания"
+                    :placeholder="$t('form.placeholderCompany')"
                   />
                 </div>
                 <div class="form__group">
@@ -302,7 +286,7 @@
                     type="text"
                     id="name"
                     class="form__input"
-                    placeholder="Введите ваше имя*"
+                    :placeholder="$t('form.placeholderName')"
                     required
                   />
                 </div>
@@ -311,7 +295,7 @@
                     type="tel"
                     id="phone"
                     class="form__input"
-                    placeholder="Ваш номер телефона*"
+                    :placeholder="$t('form.placeholderPhone')"
                     required
                   />
                 </div>
@@ -320,50 +304,49 @@
                     type="email"
                     id="email"
                     class="form__input"
-                    placeholder="email-адрес"
+                    :placeholder="$t('form.placeholderEmail')"
                   />
                 </div>
                 <button type="submit" class="form__button btn">
-                  Отправить заявку
+                  {{ $t("form.submitButton") }}
                 </button>
               </form>
             </li>
             <li class="form__item-2">
               <h1 class="form__title title-2">
-                Становитесь добросовестным налогоплательщиком
+                {{ $t("form.title") }}
               </h1>
               <p class="form__text text-1">
-                Заполните анкету, мы&nbsp;с&nbsp;вами свяжемся. Обычно
-                интеграция занимает 1&nbsp;рабочий день.
+                {{ $t("form.text") }}
               </p>
               <div class="form__block-icon flex">
                 <a class="form__link" href="#">
-                    <img
-                  class="form__img-icon-1"
-                  src="@/assets/RuStore.svg"
-                  alt="Иконка RuStore"
-                />
+                  <img
+                    class="form__img-icon-1"
+                    src="@/assets/RuStore.svg"
+                    alt="Иконка RuStore"
+                  />
                 </a>
                 <a class="form__link" href="#">
-                    <img
-                  class="form__img-icon-2"
-                  src="@/assets/AppStore.svg"
-                  alt="Иконка AppStore"
-                />
+                  <img
+                    class="form__img-icon-2"
+                    src="@/assets/AppStore.svg"
+                    alt="Иконка AppStore"
+                  />
                 </a>
                 <a class="form__link" href="#">
-                    <img
-                  class="form__img-icon-3"
-                  src="@/assets/GooglePlay.svg"
-                  alt="Иконка GooglePlay"
-                />
+                  <img
+                    class="form__img-icon-3"
+                    src="@/assets/GooglePlay.svg"
+                    alt="Иконка GooglePlay"
+                  />
                 </a>
                 <a class="form__link" href="#">
-                    <img
-                  class="form__img-icon-4"
-                  src="@/assets/AppGallery.svg"
-                  alt="Иконка AppGallery"
-                />
+                  <img
+                    class="form__img-icon-4"
+                    src="@/assets/AppGallery.svg"
+                    alt="Иконка AppGallery"
+                  />
                 </a>
               </div>
             </li>
@@ -376,30 +359,155 @@
             <div class="footer__block flex">
               <a class="footer__link" href="#">
                 <img
-                class="footer__logo logo-img"
-                src="@/assets/footer-logo.svg"
-                alt="Логотип"
-              />
+                  class="footer__logo logo-img"
+                  src="@/assets/footer-logo.svg"
+                  alt="Логотип"
+                />
               </a>
               <span class="footer__text-city text-1">
-                ООО &laquo;Доступный город&raquo;
+                {{ $t("footer.companyName") }}
               </span>
-              <span class="footer__text-inn text-1"> ИНН 6686079161 </span>
-              <span class="footer__text-ogrn text-1"> ОГРН 1169658044742 </span>
+              <span class="footer__text-inn text-1">
+                {{ $t("footer.inn") }}
+              </span>
+              <span class="footer__text-ogrn text-1">
+                {{ $t("footer.ogrn") }}
+              </span>
             </div>
             <div class="footer__block-2">
-              <button class="footer__btn btn">Подключиться</button>
+              <button class="footer__btn btn" @click="openModal">
+                {{ $t("footer.connectButton") }}
+              </button>
             </div>
           </div>
         </div>
       </section>
+      <div>
+        <!-- Модальное окно -->
+        <div v-if="isModalOpen" class="modal" @click="closeModal">
+          <div class="modal__content" @click.stop>
+            <button class="modal__close" @click="closeModal">×</button>
+            <form class="form__modifier">
+              <div class="form__group">
+                <input
+                  type="text"
+                  id="company"
+                  class="form__input"
+                  :placeholder="$t('modal.placeholderCompany')"
+                />
+              </div>
+              <div class="form__group">
+                <input
+                  type="text"
+                  id="name"
+                  class="form__input"
+                  :placeholder="$t('modal.placeholderName')"
+                  required
+                />
+              </div>
+              <div class="form__group">
+                <input
+                  type="tel"
+                  id="phone"
+                  class="form__input"
+                  :placeholder="$t('modal.placeholderPhone')"
+                  required
+                />
+              </div>
+              <div class="form__group">
+                <input
+                  type="email"
+                  id="email"
+                  class="form__input"
+                  :placeholder="$t('modal.placeholderEmail')"
+                />
+              </div>
+              <button type="submit" class="form__button btn">
+                {{ $t("modal.submitButton") }}
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </main>
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      isMenuOpen: false,
+      isRussian: true,
+      isModalOpen: false, // Управление модальным окном
+    };
+  },
+  computed: {
+    currentFlag() {
+      return this.isRussian
+        ? require("@/assets/rus-logo.svg")
+        : require("@/assets/eng-logo.svg");
+    },
+    currentLang() {
+      return this.isRussian ? "РУ" : "ENG";
+    },
+  },
+  methods: {
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen;
+    },
+    toggleLanguage() {
+      this.isRussian = !this.isRussian;
+      this.$i18n.locale = this.isRussian ? "ru" : "en";
+    },
+    openModal() {
+      this.isModalOpen = true;
+      document.body.style.overflow = "hidden"; // Отключаем прокрутку при открытом модальном окне
+    },
+    closeModal() {
+      this.isModalOpen = false;
+      document.body.style.overflow = ""; // Включаем прокрутку при закрытом модальном окне
+    },
+  },
+};
+</script>
 
 <style scoped>
+/*модальное окно*/
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal__content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  position: relative;
+}
+
+.modal__close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/*модальное окно*/
+
 .header {
   margin: 20px 0 20px 0;
   padding: 0 20px;
@@ -418,10 +526,25 @@
   overflow: hidden;
 }
 
+.header__back-link {
+  font-size: 25px;
+  color: #f5b034;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease-in-out;
+  white-space: nowrap;
+  margin-bottom: 10px;
+}
+
+.header__back-link:hover {
+  color: #ffffff;
+}
+
 .header__block-list {
   padding: 109px 0 257px 0;
   margin: 0 121px 0 364px;
   justify-content: space-between;
+  align-items: center;
 }
 
 .header__btn {
@@ -432,6 +555,31 @@
   text-align: center;
   border-radius: 10px;
   border: none;
+  margin-right: 20px;
+  margin-left: auto;
+}
+
+.header__lang-button {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.header__lang-icon {
+  max-width: 29px;
+  width: 100%;
+  min-height: 29px;
+  margin-right: 16px;
+}
+
+.header__lang-text {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 64px;
+  color: #ffffff;
+  margin-right: 6px;
 }
 
 .btn {
@@ -1235,7 +1383,7 @@
 /*footer*/
 
 .footer__container {
-    margin: 0 20px;
+  margin: 0 20px;
 }
 
 .footer {
@@ -1266,10 +1414,10 @@
 }
 
 .footer__content {
-    padding: 168px 0;
-    max-width: 1192px;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
+  padding: 168px 0;
+  max-width: 1192px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 </style>
