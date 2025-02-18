@@ -140,19 +140,19 @@
                 {{ $t("services.item2") }}
               </p>
             </li>
-            <li class="services__item-1">
-              <span class="services__circle-1">
-                <span class="services__number-1">3</span>
+            <li class="services__item-1 item-3">
+              <span class="services__circle-1 circle-3">
+                <span class="services__number-1 number-3">3</span>
               </span>
-              <p class="services__text-1 text-2 services-element">
+              <p class="services__text-1 text-2 color-text-3 services-element">
                 {{ $t("services.item3") }}
               </p>
             </li>
-            <li class="services__item-2">
-              <span class="services__circle-2">
-                <span class="services__number-2">4</span>
+            <li class="services__item-2 item-4">
+              <span class="services__circle-2 circle-4">
+                <span class="services__number-2 number-4">4</span>
               </span>
-              <p class="services__text-2 text-2 services-element">
+              <p class="services__text-2 text-2 color-text-4 services-element">
                 {{ $t("services.item4") }}
               </p>
             </li>
@@ -1320,7 +1320,7 @@ export default {
   text-align: center;
   color: #d7d7d7;
   opacity: 40%;
-  border-radius: 20px;
+  border-radius: 25px;
   border: 2px solid #e6e8ea;
 }
 
@@ -1419,5 +1419,719 @@ export default {
   width: 100%;
   justify-content: space-between;
   align-items: center;
+}
+
+@media (max-width: 1641px) {
+  .header__block-list,
+  .header__block-name {
+    margin: 0 204.8px;
+  }
+}
+
+@media (max-width: 1236px) {
+  .header__block-list,
+  .header__block-name {
+    margin: 0 50px;
+  }
+
+  .panacea,
+  .retribution,
+  .processes,
+  .services,
+  .functional,
+  .cost,
+  .advantages,
+  .form,
+  .footer__container {
+    margin: 0 70px;
+  }
+
+  .panacea {
+    padding: 44px 0 54px;
+  }
+
+  .retribution__list-items {
+    gap: 37px;
+  }
+
+  .retribution__title {
+    margin-bottom: 35px;
+  }
+
+  .retribution {
+    padding: 0 0 61px;
+  }
+
+  .processes {
+    padding: 0 0 50px 0;
+  }
+
+  .processes__card {
+    padding: 0 23px;
+  }
+
+  .processes__text {
+    text-align: center;
+  }
+
+  .services {
+    padding: 0 0 55px 0;
+  }
+
+  .functional__title {
+    min-height: 60px;
+    margin-bottom: 18px;
+  }
+
+  .functional {
+    padding: 0 0 64px 0;
+  }
+
+  .functional__item {
+    padding: 0 40px;
+  }
+
+  .advantages__title {
+    margin-bottom: 35px;
+  }
+
+  .advantages {
+    padding: 0 0 62px 0;
+  }
+
+  .advantages__item {
+    padding: 0 20px 20px;
+  }
+
+  .form__modifier {
+    max-width: 300px;
+    gap: 31px;
+  }
+
+  .form__button {
+    padding: 26px 38px;
+    font-size: 21px;
+  }
+
+  .form__input {
+    font-size: 22px;
+  }
+
+  .footer__btn {
+    padding: 25px 100.5px;
+    font-size: 23px;
+  }
+
+  .title {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .title-2 {
+    font-size: 38px;
+    line-height: 48px;
+  }
+
+  .circle-3 {
+    background-color: #ffffff;
+  }
+
+  .number-3 {
+    color: #f5b034;
+  }
+
+  .item-3 {
+    background-color: #f5b034;
+  }
+
+  .color-text-3 {
+    color: #ffffff;
+  }
+
+  .circle-4 {
+    background-color: #f5b034;
+  }
+
+  .number-4 {
+    color: #ffffff;
+  }
+
+  .item-4 {
+    background-color: #f5f4f2;
+  }
+
+  .color-text-4 {
+    color: #2d2e2e;
+  }
+
+  .element-one-card {
+    padding: 83px 115px;
+  }
+
+  .element-two-card {
+    padding: 83px 44px;
+  }
+
+  .element-three-card {
+    padding: 97px 276px 97px 115px;
+  }
+
+  .form__item {
+    padding: 0 20px;
+  }
+
+  .form__list-items {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .header__container {
+    min-height: 740px;
+  }
+
+  .header__block-list {
+    padding: 39px 0 159px 0;
+  }
+
+  .header__block-list,
+  .header__block-name {
+    margin: 0 30px;
+  }
+
+  .header__btn {
+    line-height: 46px;
+  }
+
+  .title {
+    font-size: 35px;
+    line-height: 40px;
+  }
+
+  .title-2 {
+    font-size: 33px;
+    line-height: 40px;
+  }
+
+  .text-1 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .retribution-element-1 {
+    padding: 25px 25px 25px;
+  }
+
+  .retribution-element-2 {
+    padding: 25px 25px 25px 25px;
+  }
+
+  .retribution__circle {
+    width: 45px;
+    height: 45px;
+  }
+
+  .processes__list-items {
+    padding: 0 10px;
+  }
+
+  .processes__title {
+    min-height: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .processes__card {
+    padding: 0 0;
+  }
+
+  .panacea__block-1 {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .panacea__item-1,
+  .panacea__item-2 {
+    max-width: 100%;
+  }
+
+  .panacea__text-element-1,
+  .panacea__text-element-2,
+  .panacea__text-element-3 {
+    max-width: 100%;
+  }
+
+  .services__list-items {
+    width: 100%
+  }
+
+  .services__item-1,
+  .services__item-2 {
+    max-width: 100%;
+  }
+
+  .header__title {
+    margin-bottom: 30px;
+  }
+
+  .panacea,
+  .retribution,
+  .processes,
+  .services,
+  .functional,
+  .cost,
+  .advantages,
+  .form,
+  .footer__container {
+    margin: 0 50px;
+  }
+
+  .advantages__list-items {
+    flex-direction: column;
+  }
+
+  .advantages__item {
+    max-width: 100%;
+  }
+
+  .form__list-items {
+    flex-direction: column;
+  }
+
+  .circle-3 {
+    background-color: #f5b034;
+  }
+
+  .number-3 {
+    color: #ffffff;
+  }
+
+  .item-3 {
+    background-color: #f5f4f2;
+  }
+
+  .color-text-3 {
+    color: #2D2E2E;
+  }
+
+  .circle-4 {
+    background-color: #ffffff;
+  }
+
+  .number-4 {
+    color: #f5b034;
+  }
+
+  .item-4 {
+    background-color: #f5b034;
+  }
+
+  .color-text-4 {
+    color: #ffffff;
+  }
+
+  .functional__block-result {
+    flex-direction: column;
+  }
+
+  .functional__block {
+    margin: 0;
+  }
+
+  .functional__block-services {
+    margin: 0;
+  }
+
+  .functional__item-conclusion {
+    gap: 28px;
+  }
+
+  .functional__item {
+    max-width: 100%;
+    padding: 0 0 0 20px;
+  }
+
+  .functional__block-services {
+    max-width: 100%;
+  }
+
+  .cost {
+    padding: 0 0 62px 0;
+  }
+
+  .cost__text {
+    line-height: 30px;
+  }
+
+  .advantages__item {
+    padding: 0 0 0;
+  }
+
+  .form__list-items {
+    width: 100%;
+  }
+
+  .form__item {
+    max-width: 100%;
+    padding: 0 0;
+  }
+
+  .form__item-2 {
+    padding: 10px 0 0 0;
+  }
+
+  .form__title {
+    text-align: center;
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  .form__text {
+    text-align: center;
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  .form__block-icon {
+    justify-content: space-evenly;
+  }
+
+  .form__block-icon {
+    gap: 10px;
+  }
+
+  .footer__content {
+    padding: 128px 0;
+  }
+
+  .footer__btn {
+    padding: 20px 30px;
+    font-size: 23px;
+  }
+
+  .element-one-card,
+  .element-two-card,
+  .element-three-card {
+    padding: 83px 95px;
+  }
+
+  .footer {
+    min-height: 402px;
+  }
+}
+
+/*320*/
+@media (max-width: 586px) {
+  .form__block-icon {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form__img-icon-1 {
+    width: 134.55px;
+    height: 49.62px;
+  }
+
+  .form__img-icon-2 {
+    width: 134.55px;
+    height: 39.62px;
+  }
+
+  .form__img-icon-4 {
+    width: 134.55px;
+    height: 44.62px;
+  }
+
+  .title-2 {
+  font-size: 22px;
+  line-height: 27px;
+  }
+
+  .form__title {
+    text-align: left;
+  }
+
+  .form__text {
+    text-align: left;
+  }
+
+  .title {
+    font-size: 23px;
+    line-height: 28px;
+  }
+
+  .header {
+    margin: 10px 0 10px 0;
+    padding: 0 10px;
+  }
+
+  .header__back-link {
+    font-size: 21px;
+  }
+
+  .header__block-list,
+  .header__block-name {
+    margin: 0 10px;
+  }
+
+  .header__founder-name {
+    font-size: 23px;
+  }
+
+  .header__founder-name-text {
+    font-size: 21px;
+    line-height: 22.56px;
+  }
+
+  .header__btn {
+    max-width: 110px;
+    font-size: 13px;
+    line-height: 20px;
+    margin-right: 5px;
+  }
+
+  .header__logo {
+    max-width: 75px;
+  }
+
+  .header__icon-ru {
+    max-width: 14px;
+    width: 100%;
+  }
+
+  .header__container {
+    min-height: 475px;
+  }
+
+  .header__block-list {
+    padding: 10px 0 100px 0;
+  }
+
+  .header__lang-icon {
+    max-width: 19px;
+    min-height: 19px;
+    margin-right: 6px;
+  }
+
+  .header__lang-text {
+    font-size: 13px;
+    line-height: 36px;
+  }
+
+  .element-one-card,
+  .element-two-card,
+  .element-three-card {
+    padding: 53px 53px;
+  }
+
+  .panacea__text-element-1,
+  .panacea__text-element-2,
+  .panacea__text-element-3 {
+    font-size: 20px;
+    line-height: 22.16px;
+  }
+
+  .panacea,
+  .retribution,
+  .processes,
+  .services,
+  .functional,
+  .cost,
+  .advantages,
+  .form,
+  .footer__container {
+    margin: 0 10px;
+  }
+
+  .panacea {
+    padding: 24px 0 34px;
+  }
+
+  .panacea__title {
+    margin-bottom: 15px;
+  }
+
+  .retribution__title {
+    margin-bottom: 15px;
+  }
+
+  .text-1 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .text-2 {
+    font-size: 20px;
+    line-height: 22.16px;
+  }
+
+  .retribution__list-items {
+    gap: 10px;
+  }
+
+  .retribution__circle {
+    width: 30px;
+    height: 30px;
+  }
+
+  .retribution__number {
+    font-size: 13px;
+  }
+
+  .retribution__block-thesis {
+    gap: 20px;
+  }
+
+  .retribution {
+    padding: 0 0 32px;
+  }
+
+  .processes {
+    padding: 0 0 32px 0;
+  }
+
+  .services__title {
+    margin-bottom: 15px;
+  }
+
+  .services__text-thesis {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+
+  .services__circle-1,
+  .services__circle-2 {
+    width: 30px;
+    height: 30px;
+  }
+
+  .services__number-1,
+  .services__number-2,
+  .services__number {
+    font-size: 16px;
+  }
+
+  .functional__title {
+    text-align: center;
+  }
+
+  .functional__bold-text {
+    font-size: 21px;
+    line-height: 24.84px;
+  }
+
+  .functional__bold-text-services {
+    font-size: 18px;
+    line-height: 21.6px;
+  }
+
+  .functional__normal-text {
+    font-size: 18px;
+    line-height: 21.6px;
+  }
+
+  .functional__item {
+    padding: 0 0 0 10px;
+  }
+
+  .functional__item-conclusion {
+    flex-direction: row-reverse;
+  }
+
+  .functional__img {
+    padding: 51px 0;
+  }
+
+  .functional {
+    padding: 0 0 32px 0;
+  }
+
+  .cost__text {
+    font-size: 19px;
+  }
+
+  .cost {
+    padding: 0 0 32px 0;
+  }
+
+  .advantages__title {
+    margin-bottom: 20px;
+  }
+
+  .advantages__circle,
+  .advantages__circle-2,
+  .advantages__circle-3 {
+    width: 30px;
+    height: 30px;
+  }
+
+  .advantages__number,
+  .advantages__number-2,
+  .advantages__number-3 {
+    font-size: 18px;
+  }
+
+  .advantages__item {
+    display: flex;
+    gap: 15px;
+  }
+
+  .advantages {
+    padding: 0 0 32px 0;
+  }
+
+  .form__modifier {
+    max-width: 243px;
+    gap: 20px;
+  }
+
+  .form__group {
+    max-width: 240px;
+    min-height: 63px;
+    border-radius: 18px;
+  }
+
+  .form__input {
+    padding: 14px 0;
+    font-size: 18px;
+    border-radius: 18px;
+  }
+
+  .form__item {
+    max-width: 587px;
+    min-height: 488px;
+  }
+
+  .form__button {
+    padding: 18px 18px;
+    font-size: 21px;
+  }
+
+  .form {
+    padding: 0 0 42px 0;
+  }
+
+  .footer__content {
+    padding: 68px 0;
+  }
+
+  .footer {
+    min-height: 391px;
+  }
+
+  .footer__btn {
+    padding: 15px 40px;
+    font-size: 20px;
+  }
+
+  .footer__content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer__block {
+    text-align: center;
+  }
 }
 </style>
